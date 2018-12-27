@@ -1,19 +1,36 @@
-%define		kdeappsver	18.04.0
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		kanagram
 Summary:	kanagram
 Name:		ka5-%{kaname}
-Version:	18.04.0
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
-Group:		X11/Libraries
+Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	91de0134bbbbc96992c332ba12214e76
+# Source0-md5:	335c68bef64e28bed88c02f7791fa5d6
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Network-devel >= 5.11.1
+BuildRequires:	Qt5OpenGL-devel
+BuildRequires:	Qt5Qml-devel
+BuildRequires:	Qt5Quick-devel
+BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	cmake >= 2.8.12
+BuildRequires:	gettext-devel
 BuildRequires:	ka5-libkeduvocdocument-devel >= %{version}
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-kconfig-devel
+BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-kcoreaddons-devel
+BuildRequires:	kf5-kcrash-devel
+BuildRequires:	kf5-kdeclarative-devel
+BuildRequires:	kf5-kdoctools-devel
+BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-knewstuff-devel
+BuildRequires:	kf5-sonnet-devel
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -23,7 +40,16 @@ Requires:	Qt5MultimediaQuick
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Kanagram.
+Kanagram is a game based on anagrams of words: the puzzle is solved
+when the letters of the scrambled word are put back in the correct
+order. There is no limit on either time taken, or the amount of
+attempts to solve the word.
+
+Features
+
+• Several word lists included • Hints and cheat help system • Word
+list editor • Word lists distribution via KNewStuff • Scalable user
+interface appropriate for children
 
 %prep
 %setup -q -n %{kaname}-%{version}
