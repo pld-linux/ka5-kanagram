@@ -53,6 +53,19 @@ Features
 list editor • Word lists distribution via KNewStuff • Scalable user
 interface appropriate for children
 
+%description -l pl.UTF-8
+Kanagram jest grą bazującą na anagramach słów; zagadka jest rozwiązana
+gdy litery szukanego słowa są ustawione z powrotem w poprawnej kolejności.
+Nie ma ograniczeń na wykorzystany czas ani na liczbę prób.
+
+Właściwości
+
+• Wiele list słów wbudowanych
+• System podpowiedzi
+• Edytor listy słów
+• Dystrybucja listy słów przez KNewStuff
+• Skalowalny interfejs użytkownika odpowiedni dla dzieci
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
