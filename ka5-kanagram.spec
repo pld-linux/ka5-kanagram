@@ -1,15 +1,15 @@
-%define		kdeappsver	21.08.3
+%define		kdeappsver	21.12.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		kanagram
 Summary:	kanagram
 Name:		ka5-%{kaname}
-Version:	21.08.3
+Version:	21.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications/Games
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	a1575f39a73392369e6b45f7e730a2e8
+# Source0-md5:	3be44533a9ea6f82716da9f0da554513
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= 5.11.1
@@ -55,16 +55,14 @@ interface appropriate for children
 
 %description -l pl.UTF-8
 Kanagram jest grą bazującą na anagramach słów; zagadka jest rozwiązana
-gdy litery szukanego słowa są ustawione z powrotem w poprawnej kolejności.
-Nie ma ograniczeń na wykorzystany czas ani na liczbę prób.
+gdy litery szukanego słowa są ustawione z powrotem w poprawnej
+kolejności. Nie ma ograniczeń na wykorzystany czas ani na liczbę prób.
 
 Właściwości
 
-• Wiele list słów wbudowanych
-• System podpowiedzi
-• Edytor listy słów
-• Dystrybucja listy słów przez KNewStuff
-• Skalowalny interfejs użytkownika odpowiedni dla dzieci
+• Wiele list słów wbudowanych • System podpowiedzi • Edytor listy słów
+• Dystrybucja listy słów przez KNewStuff • Skalowalny interfejs
+użytkownika odpowiedni dla dzieci
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -91,7 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/kanagram.knsrc
 %attr(755,root,root) %{_bindir}/kanagram
 %{_desktopdir}/org.kde.kanagram.desktop
 %{_datadir}/config.kcfg/kanagram.kcfg
@@ -105,3 +102,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/scalable/apps/kanagram.svgz
 %{_datadir}/kanagram
 %{_datadir}/metainfo/org.kde.kanagram.appdata.xml
+%{_datadir}/knsrcfiles/kanagram.knsrc
